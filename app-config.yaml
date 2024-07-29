@@ -64,9 +64,17 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
+  environment: development
   providers:
-    # See https://backstage.io/docs/auth/guest/provider
-    guest: {}
+    github:
+      development:
+        clientId: Ov23liMvl0gf35HnQE8a
+        clientSecret: 5c52a281b84be5b667d1f12eaad3e27b78e716ea
+        # clientId: ${GITHUB_CLIENT_ID}
+        # clientSecret: ${GITHUB_CLIENT_SECRET}
+        # signIn:
+        #   resolvers:
+        #     resolver: usernameMatchingUserEntityName
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
@@ -77,6 +85,16 @@ catalog:
     pullRequestBranchName: backstage-integration
   rules:
     - allow: [Component, System, API, Resource, Location]
+  providers:
+    githubOrg:
+      id: development 
+      orgs: ['Backstage-I-O']
+      githubUrl: https://github.com/Backstage-I-O
+      schedule:
+        initialDelay: { seconds: 30 }
+        frequency: { hours: 1 }
+        timeout: { minutes: 50 }
+    
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
