@@ -68,13 +68,13 @@ auth:
   providers:
     github:
       development:
-        clientId: Ov23liMvl0gf35HnQE8a
-        clientSecret: 5c52a281b84be5b667d1f12eaad3e27b78e716ea
-        # clientId: ${GITHUB_CLIENT_ID}
-        # clientSecret: ${GITHUB_CLIENT_SECRET}
-        # signIn:
-        #   resolvers:
-        #     resolver: usernameMatchingUserEntityName
+        # clientId: Ov23liMvl0gf35HnQE8a
+        # clientSecret: 5c52a281b84be5b667d1f12eaad3e27b78e716ea
+        clientId: ${GITHUB_CLIENT_ID}
+        clientSecret: ${GITHUB_CLIENT_SECRET}
+        signIn:
+          resolvers:
+          - resolver: usernameMatchingUserEntityName
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
