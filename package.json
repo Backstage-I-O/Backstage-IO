@@ -54,5 +54,11 @@
     "*.{json,md}": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "@backstage/integration": "^1.13.0",
+    "@backstage/plugin-kubernetes": "^0.11.12",
+    "@backstage/plugin-kubernetes-backend": "^0.18.3",
+    "@backstage/plugin-scaffolder-backend": "^1.23.0"
   }
 }

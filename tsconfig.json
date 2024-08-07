@@ -4,8 +4,9 @@
     "packages/*/src",
     "plugins/*/src",
     "plugins/*/dev",
-    "plugins/*/migrations"
-  ],
+    "plugins/*/migrations",
+    "plugins/kubernetes.ts"
+, "packages/backend/plugins"  ],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "outDir": "dist-types",

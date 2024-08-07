@@ -8,11 +8,14 @@
 
 import { createBackend } from '@backstage/backend-defaults';
 import dotenv from 'dotenv';
+
 dotenv.config({ path: '../../.env' });
 
 // Configuration that depends on environment variables
 
 const backend = createBackend();
+
+backend.add(import('@backstage/plugin-kubernetes-backend/alpha'));
 
 backend.add(import('@backstage/plugin-app-backend/alpha'));
 backend.add(import('@backstage/plugin-proxy-backend/alpha'));
@@ -26,6 +29,9 @@ backend.add(import('@backstage/plugin-auth-backend-module-guest-provider'));
 // See https://backstage.io/docs/auth/guest/provider
 backend.add(import('@backstage/plugin-auth-backend-module-github-provider'))  
 // IMPORTANT for github error resolution
+
+backend.add(import('@backstage/plugin-scaffolder-backend-module-github'));
+// IMPORTANT 
 
 // catalog plugin
 backend.add(import('@backstage/plugin-catalog-backend/alpha'));

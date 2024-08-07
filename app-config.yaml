@@ -78,6 +78,11 @@ auth:
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
+  defaultAuthor:
+    name: M.C. Hammer # Defaults to `Scaffolder`
+    email: hammer@donthurtem.com # Defaults to `scaffolder@backstage.io`
+  defaultCommitMessage: "U can't touch this" # Defaults to 'Initial commit'
+
 
 catalog:
   import:
